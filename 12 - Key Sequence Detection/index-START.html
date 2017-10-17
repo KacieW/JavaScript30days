@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+const keyPress = [];
+const password = 'nimei';
+window.addEventListener('keyup', function(e){
+  keyPress.push(e.key);
+  keyPress.splice(-password.length-1, keyPress.length-password.length);
+  if(keyPress.join('')==password){
+    console.log("yes");
+  }
+});
+</script>
+</body>
+</html>
