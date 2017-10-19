@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+
+  <script>
+    // start with strings, numbers and booleans
+    var name = 'aa';
+    var name1 = name;
+
+    name = 'bb';
+    console.log(name, name1);
+
+    // Let's say we have an array
+    var players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    //var play1 = players;
+    // play1[1] ="33";
+    // console.log(players, play1);
+
+    // and we want to make a copy of it.
+    // var play2 = players.slice();
+    // play1[1] ="33";
+
+    var play3 = [...players];
+    //play3[2] ="3";
+
+    var play4 = Array.from(players);
+    // play4[1] = 'a';
+
+    var play5 = [].concat(players);
+    play5[2] ='b';
+
+    var obj = {
+      name:'dog',
+      age:6,
+      gender:"M",
+      social:{
+        facebook:'a',
+        twitter:'b'
+      }
+    }
+    console.log(obj.age);
+
+    var obj1 = Object.assign({}, obj, {age:77});
+
+    var obj2 = JSON.parse(JSON.stringify(obj));
+    obj2.social.facebook='sdf';
+    obj2.social.linkedin='asdfdf';
+    console.log(obj);
+    console.log(obj2);
+
+  </script>
+
+</body>
+</html>
