@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+</head>
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>🔥WOAH!</h1>
+  </div>
+
+  <style>
+  html {
+    color:black;
+    font-family: sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+
+  }
+
+  h1 {
+    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    font-size: 100px;
+  }
+  </style>
+
+<script>
+var hero = document.querySelector('.hero');
+var h1 = hero.querySelector('h1');
+var walk =100;
+
+function showShadow(e){
+  var wid = hero.offsetWidth;
+  var hei = hero.offsetHeight;
+  var x = e.offsetX;
+  var y = e.offsetY;
+  if(this!= e.target){ //becase hero has a child element h1, when mouse on the h1 element, the x, y are based on
+    //the h1 element. that's why x and y are close to 0 when point at the corner of the h1 element.
+    x = x+e.target.offsetLeft;
+    y = y+e.target.offsetTop;
+  }
+
+  var xWalk  =Math.round((x/wid*walk)-(walk/2));
+  var yWalk  =Math.round((y/hei*walk)-(walk/2));
+
+  h1.style.textShadow = `${xWalk}px ${yWalk}px 0 green`;
+}
+
+hero.addEventListener('mousemove', showShadow);
+</script>
+</body>
+</html>
