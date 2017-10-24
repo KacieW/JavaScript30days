@@ -12,3 +12,5 @@ edge of the target node. 从鼠标点击的位置，到元素自己的边缘的�
 
 - **offsetLeft/offsetTop** :
 It returns the left position (in pixels) relative to the left side the offsetParent element. 当前元素跟他爹之间的距离
+
+- 如何让阴影已一个元素为原点画园：把各种offset换算成已此元素为中心的（即此刻鼠标的坐标应该是0，0）的坐标即可。
