@@ -54,7 +54,7 @@ var sorted = bands.sort(function(a, b){
   return replacethem(a)>replacethem(b) ? 1 : -1;
 })
 
-ul.innerHTML = sorted.map(function(x){
+ul.innerHTML = sorted.map(function(x){ //map each item of sorted to the ul innerHTML
   return `<li>${x}</li>`;
 }).join("");
 </script>
