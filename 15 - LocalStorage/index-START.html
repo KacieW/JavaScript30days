@@ -69,7 +69,6 @@
       x.checked=false;
       items[x.dataset.index].done = false;
       localStorage.setItem('items', JSON.stringify(items));
-      //showListItems(items, itemsList);
     })
   }
   function clearAll(e){
@@ -82,8 +81,7 @@
     loadnode.appendChild(nodeText);
     itemsList.appendChild(loadnode);
     items=[];
-    localStorage.setItem('items', JSON.stringify(items));
-    //showListItems(items, itemsList);
+    localStorage.removeItem('items');
   }
   function showListItems(items=[], itemsList){
     itemsList.innerHTML=items.map(function(item, i){
