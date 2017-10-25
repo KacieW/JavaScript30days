@@ -2,14 +2,12 @@
 It should run on a secured server. We use the package provided for this exercise to run a localhost server for this app.
 
 ## Get的skill
-1. **`Navigator.mediaDevices`** : read-only property returns a `MediaDevices` object, which provides access to connected media input devices like 
+1. **`Navigator.mediaDevices`** : It returns a `MediaDevices` object, which provides access to connected media input devices like 
 cameras and microphones, as well as screen sharing.
 
-2. **`Navigator.MediaDevices.getUserMedia(constraints)`** : With the user's permission through a prompt, turns on a camera or screensharing and/or 
-a microphone on the system and provides a MediaStream containing a video track and/or an audio track with the input. It returns a Promise.
+2. **`Navigator.MediaDevices.getUserMedia(constraints)`** : User provide a video/audio request, it returns a Promise that contains a MediaStream with tracks containing the requested types of media.
 
-3. **`constraints`** : The constraints parameter is a MediaStreamConstraints object with two members: video and audio, describing the media types 
-requested. 
+3. **`constraints`** : The constraints parameter is a MediaStreamConstraints object with two members: video and audio, describing the media types requested. 
 
 4. **`MediaStream`** : The MediaStream interface represents a stream of media content.
 
