@@ -32,7 +32,7 @@
     document.body.appendChild(spantag);
 
     function highlightlink(){
-      var coords = this.getBoundingClientRect();
+      var coords = this.getBoundingClientRect();//it returns the size of an element and its position relative to the viewport.
       var width = coords.width;
       var height = coords.height;
       var left = coords.left+window.scrollX;
