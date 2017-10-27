@@ -47,12 +47,12 @@
   }
 
   function setVoice(){
-    var self = this;//it is a closure, we need to keep a copy of this.
+    //var self = this;//it is a closure, we need to keep a copy of this.
      msg.voice = voices.find(function(x){
-       if(x.name == self.value){
+       if(x.name == this.value){
          return x;
        }
-     });
+     }, this);//pass the this to find()
      toggle();
   }
 
